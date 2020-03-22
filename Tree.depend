@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1584899209 source:i:\desktop\tree\main.cpp
+	<iostream>
+	"BST.h"
+
+1584899788 source:i:\desktop\tree\bst.cpp
+	"BST.h"
+
+1584897469 i:\desktop\tree\bst.h
+	"Node.h"
+
+1584897457 i:\desktop\tree\node.h
+	<iostream>
+
+1584899993 source:i:\desktop\tree\node.cpp
+	"Node.h"
+

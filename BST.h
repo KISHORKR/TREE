@@ -15,6 +15,9 @@ class BST
         void inOrder();
         void postOrder();
         int delete_tree();
+        int search(int);
+        int remove(int value);
+
 
     protected:
 

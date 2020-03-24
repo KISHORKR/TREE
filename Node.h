@@ -13,7 +13,8 @@ using namespace std;
 #define DELETE_SUCCESS 1
 #define DELETE_FAILED  0
 
-
+#define DATA_PRESENT      1
+#define DATA_NOT_PRESENT  0
 class Node
 {
 
@@ -21,11 +22,16 @@ class Node
         int data;
         Node *right,*left;
     public:
-        friend class BST;
         Node(int);
         ~Node();
         int add(int value);
         int delete_all();
+        int search(int);
+        int get_value();
+        Node* get_left();
+        int min_value();
+        Node* remove(int,Node*);
+        void set_left(Node*);
         friend  void display(int,Node*);
 
     protected:

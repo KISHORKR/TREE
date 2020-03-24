@@ -9,7 +9,7 @@ int main(){
     while (true)
     {
         cout << "Please select the Operation" << endl;
-        cout << "1.Insert Data" << endl << "2.Delete Tree" << endl << "3.Preorder Traversal (DFS)" << endl << "4.Inorder Traversal" << endl << "5.Postorder Traversal" << endl;
+        cout << "1.Insert Data" << endl << "2.Preorder Traversal" << endl << "3.Inorder Traversal (DFS)" << endl << "4.Postorder Traversal" << endl << "5.Search Data " << endl << "6.Delete Tree" <<endl << "7.Remove Data" << endl;
         cout << "Enter Choice : ";
         cin >> choice;
         switch (choice)
@@ -20,17 +20,29 @@ int main(){
                 if ( !mytree.insert(val)) cout << "Insertion Failed..." << endl;
                 break;
             case 2:
+                mytree.preOrder();
+                break;
+            case 3:
+                mytree.inOrder();
+                break;
+            case 4:
+                mytree.postOrder();
+                break;
+            case 5:
+                cout << "Enter the Data to Search : " ;
+                cin >> val;
+                if (!mytree.search(val))cout << "Data not found :-(" << endl;
+                else cout << "Data found :-)" << endl;
+                break;
+            case 6:
                 mytree.delete_tree();
                 cout << "Tree Deleted..." << endl;
                 break;
-            case 3:
-                mytree.preOrder();
-                break;
-            case 4:
-                mytree.inOrder();
-                break;
-            case 5:
-                mytree.postOrder();
+            case 7:
+                cout << "Enter the data to remove :";
+                cin >> val;
+                if (!mytree.remove(val)) cout << "Data not found :-(" << endl;
+                else cout << "Data Removed :-)" << endl;
                 break;
             default:
                 return 0;

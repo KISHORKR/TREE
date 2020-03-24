@@ -78,3 +78,34 @@ int BST::delete_tree()
     root = NULL;
     return DELETE_SUCCESS;
 }
+
+int BST::remove(int value)
+{
+    Node* delete_node;
+    if (root == NULL) return DELETE_FAILED;
+    if (root->get_value() == value)
+    {
+        Node temp(0);
+        temp.set_left(root);
+        delete_node = root->remove(value,&temp);
+        root = temp.get_left();
+    }
+    else
+    {
+        delete_node = root->remove(value,NULL);
+    }
+
+    if(delete_node != NULL)
+    {
+            delete delete_node;
+            return DELETE_SUCCESS;
+    }
+
+    return DELETE_FAILED;
+}
+
+int BST::search(int value)
+{
+    if(root == NULL) return DATA_NOT_PRESENT;
+    else return root->search(value);
+}

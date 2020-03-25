@@ -2,7 +2,9 @@
 #define NODE_H
 
 #include <iostream>
+#include <queue>
 using namespace std;
+
 #define INSERT_SUCCESS 1
 #define INSERT_FAILED  0
 
@@ -30,6 +32,7 @@ class Node
         int get_value();
         Node* get_left();
         int min_value();
+        void BFS();
         Node* remove(int,Node*);
         void set_left(Node*);
         friend  void display(int,Node*);

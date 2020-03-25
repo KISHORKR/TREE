@@ -16,6 +16,7 @@ class BST
         void postOrder();
         int delete_tree();
         int search(int);
+        void BFS();
         int remove(int value);
 
 

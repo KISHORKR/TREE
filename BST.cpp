@@ -109,3 +109,12 @@ int BST::search(int value)
     if(root == NULL) return DATA_NOT_PRESENT;
     else return root->search(value);
 }
+
+void BST::BFS()
+{
+    if(root == NULL) cout << "Tree is Empty :-(" << endl;
+    root->BFS();
+    cout << endl;
+    return;
+}
+

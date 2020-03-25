@@ -153,3 +153,18 @@ Node* Node::remove(int value,Node* parent)
     }
     return NULL;
 }
+
+void Node::BFS()
+{
+    queue<Node*> buffer;
+    buffer.push(this);
+    do
+    {
+        cout << buffer.front()->data << "\t" ;
+        if(buffer.front()->left != NULL)  buffer.push(buffer.front()->left);
+        if(buffer.front()->right != NULL) buffer.push(buffer.front()->right);
+        buffer.pop();
+    }while(!buffer.empty());
+
+    return;
+}

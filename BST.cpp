@@ -28,7 +28,6 @@ int BST::insert(int value)
 
 int BST::insert(int value, Node* parent)
 {
-
     if(parent->data == value)return INSERT_FAILED;
     else if(parent->data > value)
     {
@@ -89,7 +88,10 @@ void BST::postOrder(){
 void BST::BFS()
 {
     queue<Node*> buffer;
-    if(root == NULL) cout << "Tree is Empty :-(" << endl;
+    if(root == NULL) {
+        cout << "Tree is Empty :-(" << endl;
+        return;
+    }
     buffer.push(root);
     do
     {

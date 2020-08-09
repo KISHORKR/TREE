@@ -1,6 +1,6 @@
 #include "Node.h"
 
-Node::Node(int value):data(value),right(NULL),left(NULL)
+Node::Node(int value):data(value),right(NULL),left(NULL),height(1)
 {
     //ctor
 }

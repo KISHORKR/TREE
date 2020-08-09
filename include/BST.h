@@ -23,10 +23,10 @@ class BST
 
          BST();
 
-        ~BST();
+        virtual ~BST();
 
         /* Insert Element in BST */
-        int insert(int);
+        virtual int insert(int);
         int insert(int,Node*);
 
         /* Display all elements present in BST */

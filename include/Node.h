@@ -3,24 +3,27 @@
 
 #include <iostream>
 #include <queue>
+
 using namespace std;
 
+class BST;
+class AVL;
 
 class Node
 {
     private:
-        int data;
+        int data,height;
         Node *right,*left;
 
     public:
 
-         Node(int);
-        ~Node();
+        Node(int);
+        virtual ~Node();
 
         friend class BST;
+        friend class AVL;
     protected:
 };
 
-void display(int,Node*);
 
 #endif // NODE_H

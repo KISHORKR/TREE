@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -36,7 +38,9 @@
 		<Unit filename="BST.h" />
 		<Unit filename="Node.cpp" />
 		<Unit filename="Node.h" />
+		<Unit filename="include/AVL.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/AVL.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

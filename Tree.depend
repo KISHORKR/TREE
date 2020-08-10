@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1596999369 source:i:\desktop\tree\main.cpp
+1596999533 source:i:\desktop\tree\main.cpp
 	<iostream>
 	"AVL.h"
 
-1596999497 source:i:\desktop\tree\bst.cpp
+1596999607 source:i:\desktop\tree\bst.cpp
 	"BST.h"
 
 1596996231 i:\desktop\tree\bst.h
@@ -16,20 +16,30 @@
 1596988888 source:i:\desktop\tree\node.cpp
 	"Node.h"
 
-1596996231 i:\desktop\tree\include\bst.h
+1597060750 i:\desktop\tree\include\bst.h
 	"Node.h"
 
-1596993485 i:\desktop\tree\include\node.h
+1597060559 i:\desktop\tree\include\node.h
 	<iostream>
 	<queue>
 
-1596999195 source:i:\desktop\tree\src\avl.cpp
+1597060552 source:i:\desktop\tree\src\avl.cpp
 	"AVL.h"
 	<Exception>
 
-1596996256 i:\desktop\tree\include\avl.h
+1597060469 i:\desktop\tree\include\avl.h
 	"BST.h"
 
 1596996256 i:\desktop\tree\avl.h
 	"BST.h"
+
+1596999607 source:i:\desktop\tree\src\bst.cpp
+	"BST.h"
+
+1596999533 source:i:\desktop\tree\src\main.cpp
+	<iostream>
+	"AVL.h"
+
+1596988888 source:i:\desktop\tree\src\node.cpp
+	"Node.h"
 

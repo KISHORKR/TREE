@@ -27,11 +27,9 @@ class BST
 
         /* Insert Element in BST */
         virtual int insert(int);
-        int insert(int,Node*);
 
         /* Display all elements present in BST */
         void display();
-        void display(int mode,Node *node);
 
         /* DFS Traversals */
         void preOrder();
@@ -43,21 +41,22 @@ class BST
 
         /* Delete all elements present in BST */
         int delete_tree();
-        int delete_tree(Node* parent);
 
         /* Search a element present in BST */
         int search(int);
-        int search(int,Node*);
 
         /* remove a element present in BST */
-        int remove(int value);
-        Node* remove(int value,Node* parent,Node* child);
-
-        int min_value(Node* parent);
-
+        virtual int remove(int value);
 
     protected:
         Node *root;
+    private:
+        int insert(int,Node*);
+        Node* remove(int value,Node* parent,Node* child);
+        int search(int,Node*);
+        int delete_tree(Node* parent);
+        void display(int mode,Node *node);
+        int min_value(Node* parent);
 };
 
 #endif // BST_H

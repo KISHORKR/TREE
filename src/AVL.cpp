@@ -139,3 +139,113 @@ Node* AVL::insert(int value,Node* node)
     //Return the Unchanged Pointer as it is balanced
     return node;
 }
+
+
+
+
+int AVL::remove(int value)
+{
+    if (root == NULL) return DELETE_FAILED;
+    root = remove(value,root);
+    return DELETE_SUCCESS;
+}
+
+Node* AVL::remove(int value,Node* node)
+{
+    //Step 1: Perform the Normal BST Delete.
+    if(node == NULL)
+    {
+        return node;
+    }
+
+    if(value < node->data)
+    {
+        node->left = remove(value , node->left);
+    }
+    else if(value > node->data)
+    {
+        node->right = remove(value , node->right);
+    }
+    else
+    {
+        Node* temp;
+        if(node->right == NULL || node->left == NULL)
+        {
+            temp = node->left ? node->left : node->right;
+
+            if(temp == NULL)
+            {
+                //No child Case
+                temp = node;
+                node = NULL;
+            }
+            else
+            {
+                //Single Child Case
+                *node = *temp;
+            }
+            delete temp;
+
+        }
+        else
+        {
+            //Two Child Case
+            temp = minNode(node->right);
+            node->data = temp->data;
+            node->right = remove(node->data,node->right);
+
+        }
+
+    }
+
+    //If the node is deleted then return
+    if(node == NULL)
+    {
+        return node;
+    }
+
+    //Step 2: Update the height of the Current Node
+    node->height = max(getHeight(node->left) , getHeight(node->right)) + 1;
+
+    //Step 3: Get the Balance factor and check that the tree is unbalanced or not
+    int balance = getBalance(node);
+
+    //If the balance if greater than 1 then it will be Left Left or Left Right Case
+
+    if(balance > 1 && getBalance(node->left) >= 0)
+    {
+        //Left Left Case
+        return rightRotate(node);
+    }
+
+    if(balance > 1 && getBalance(node->left) < 0)
+    {
+        //Left Right Case
+        node->left = leftRotate(node->left);
+        return rightRotate(node);
+    }
+
+    //If the balance if Less than -1 then it will be Right Right or Right Left Case
+
+    if(balance < -1 && getBalance(node->right) <= 0)
+    {
+        //Right Right Case
+        return leftRotate(node);
+    }
+
+    if(balance < -1 && getBalance(node->right) > 0)
+    {
+        //Right Left Case
+        node->right = rightRotate(node->right);
+        return leftRotate(node);
+    }
+
+    return node;
+}
+
+
+Node* AVL::minNode(Node* node)
+{
+    if(node->left == NULL) return node;
+    else return minNode(node->left);
+}

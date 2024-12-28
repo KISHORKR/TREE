@@ -48,6 +48,8 @@ int main(){
                 else cout << "Data Removed :-)" << endl;
                 break;
             default:
+                mytree->delete_tree();
+                cout << "Tree Deleted..." << endl;
                 return 0;
         }
         cout << endl << endl;
